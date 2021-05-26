@@ -3,9 +3,33 @@
 <html>
     <head>
         <title>Django Guitar Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'css/mystyle.css' %}"/>
     </head>
-    <body>
+    <body>        
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+              <ul>
+                <h2>Site name</h2>
+                     {% for web in Webpages%}
+                        <p>{{ web.name }}</p>
+                     {% endfor %}
+               </ul>
+              </div>
+            <div class="col-sm-4">  
+             <ul>
+                <h2>Date Accessed</h2>
+                     {% for Acc in AccessRecords%}
+                          <p>{{ Acc.date }}</p>
+                     {% endfor %}
+             </ul>
+            </div>
+       
+        </div>
+         </div>
+      
+
         <h1>Hi, picture of Django himself!</h1>
         <img src="{% static 'images/Django_guitar.jpg' %}" alt="OPS! didnt show up!">
     </body>
